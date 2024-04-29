@@ -58,15 +58,16 @@ phoneInput.addEventListener('keypress', (evt) => {
   }
 });
 
+// Logo file load
+const logoInput = document.querySelector('#logo');
 const logoBtn = document.querySelector('#logo-delete');
 logoBtn.addEventListener('click', () => {
   const img = document.querySelector('.logo-label');
   img.style.backgroundImage = '';
   logoBtn.classList.remove('active');
+  logoInput.value = null;
 });
 
-// Logo file load
-const logoInput = document.querySelector('#logo');
 logoInput.addEventListener('change', (evt) => {
   if (!evt.target.files.length) {
     return;
