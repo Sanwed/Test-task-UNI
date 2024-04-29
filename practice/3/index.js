@@ -28,11 +28,11 @@ function filterPosts(data, table, filterValue) {
   const thead = document.querySelector('#posts-header');
   removeHeaderRow(thead);
   
-  createHeaderRow(filteredData, table);
+  createHeaderRow(data, table, filteredData);
   createRows(filteredData, table);
 }
 
-function createHeaderRow(data, table) {
+function createHeaderRow(data, table, filteredData = null) {
   const thead = document.createElement('thead');
   thead.id = 'posts-header';
   const headerRow = document.createElement('tr');
@@ -50,7 +50,11 @@ function createHeaderRow(data, table) {
     image.src = 'arrow.svg';
     
     btn.addEventListener('click', () => {
-      sortPosts(data, table, key, order);
+      if (filteredData) {
+        sortPosts(filteredData, table, key, order);
+      } else {
+        sortPosts(data, table, key, order);
+      }
       
       removeSortArrows(table);
       btn.append(image);
