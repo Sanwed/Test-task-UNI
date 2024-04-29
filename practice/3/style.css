@@ -1,0 +1,22 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.btn-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+input[type="search"] {
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 48px;
+}
